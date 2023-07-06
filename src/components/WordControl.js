@@ -13,17 +13,42 @@ class WordControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      formVisibleOnPage: false,
+      resultsVisibleOnPage: false,
 
     };
   }
 
+  handleClick = () => {
 
+  }
+
+  handleGuess = () => {
+
+  }
+
+  handleChangingSelectedWord = (id) => {
+    
+  }
 
 
   render(){
+    let currentlyVisibleState = null;
+    let buttonText = null;
+    if (this.state.formVisibleOnPage != null) {
+      // currentlyVisibleState = <Guess
+      //   word={this.state.selectedWord}
+      //   onClickingGuess={this.handleGuess}
+      //   buttonText = "Guess this letter";
+    } else {
+      currentlyVisibleState = <Results />;
+      //show revealedLetters and number of guesses remaining
+      buttonText = "Make another guess"
+    }
     return (
       <React.Fragment>
         {currentlyVisibleState}
+        <button onClick={this.handleClick}>{buttonText}</button> 
       </React.Fragment>
     );
   }
